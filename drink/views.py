@@ -29,7 +29,7 @@ class DrinkSerializerDetailView(generics.RetrieveAPIView):
 # any customer is allowed to use this view for orders but they must be authenticated
 # admin can use also use this view to analyze orders by customers
 class OrderSerializerView(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAuthenticated,) 
+    # permission_classes = (permissions.IsAuthenticated,) 
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
@@ -40,8 +40,8 @@ class OrderSerializerView(generics.ListCreateAPIView):
         return obj
 
     # automatically set ordered_by field to the current login user
-    def perform_create(self, serializer):
-        serializer.save(ordered_by=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(customer=self.request.user)
         
    
 
