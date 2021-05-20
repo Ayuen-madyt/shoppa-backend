@@ -2,8 +2,8 @@ from django.utils import timezone
 from pathlib import Path, os
 import environ
 
-#env = environ.Env()
-#environ.Env.read_env()
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ('i(a=tbfl0d(a(wic^p))+#&u9dgc0a!!)58y)nr73$zli7m_#n')
+SECRET_KEY = env('security key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
