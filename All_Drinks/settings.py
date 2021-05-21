@@ -19,7 +19,7 @@ SECRET_KEY = ('i(a=tbfl0d(a(wic^p))+#&u9dgc0a!!)58y)nr73$zli7m_#n')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://shoppadrinks.herokuapp.com/']
 
 
 # Application definition
