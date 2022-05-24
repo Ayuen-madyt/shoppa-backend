@@ -19,7 +19,7 @@ SECRET_KEY = ('i(a=tbfl0d(a(wic^p))+#&u9dgc0a!!)58y)nr73$zli7m_#n')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://shoppadrinks.herokuapp.com/']
+ALLOWED_HOSTS = ['https://shoppadrinks.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
@@ -91,8 +91,12 @@ WSGI_APPLICATION = 'All_Drinks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'shoppa_db',
+        'USER':'username',
+        'PASSWORD':'c9e*M#t7$',
+        'HOST':'localhost',
+        'PORT':'5432'
     }
 }
 
@@ -134,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = 'https://shoppadrinks.herokuapp.com/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -170,14 +174,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'https://shoppadrinks.herokuapp.com/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
                
